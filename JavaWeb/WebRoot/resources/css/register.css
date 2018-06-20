@@ -1,0 +1,38 @@
+@charset "UTF-8";
+.form {
+    background: rgba(255, 255, 255, 0.2);
+    width: 400px;
+    padding-top: 110px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#login_form {
+    display: block;
+}
+
+#back_btn{
+margin-bottom: 100px;
+}
+
+#register_form {
+    display: none;
+    padding-top: 100px;
+    margin-top: -200px;
+}
+
+.fa {
+    display: inline-block;
+    top: 28px;
+    left: 6px;
+    position: relative;
+    color: #ccc;
+}
+
+input[type="text"], input[type="password"] {
+    padding-left: 26px;
+}
+
+.checkbox {
+    padding-left: 21px;
+}
