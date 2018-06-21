@@ -12,7 +12,8 @@ public class Article {
     private String article_content;
     private Date first_date;
     private Date last_date;
-    private String id;
+    private String id;		//博主账户
+    private String keyword;
 
     public Article(){}
 
@@ -77,4 +78,12 @@ public class Article {
         this.last_date = last_date;
     }
 
+	public String getKeyword() {
+		return keyword;
+	}
+
+	public void setKeyword(String keyword) {
+		this.keyword = keyword;
+	}
+    
 }

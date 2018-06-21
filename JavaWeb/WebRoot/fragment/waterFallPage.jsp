@@ -16,10 +16,10 @@
         <div class="item">
             <a href="javascript:doPost('${pageContext.request.contextPath}/VisitController',{'handle':'visitOtherBlog','id':'<%=article.getId()%>','article_id':'<%=article.getArticle_id()%>'})"
                style="text-decoration: none;color: black;">
-                <p><span>Title:</span><%=article.getTitle()%></p>
+                <p><span>标题:</span><%=article.getTitle()%></p>
                 <p><%=someContent.substring(0, count)%>...</p>
-                <p><span>Come From:</span><%=article.getId()%></p>
-                <p><span>Update Date: </span><%=article.getLast_date()%></p>
+                <p><span>来自:</span><%=article.getId()%></p>
+                <p><span>发布时间: </span><%=article.getLast_date()%></p>
             </a>
         </div>
         <%

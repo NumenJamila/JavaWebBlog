@@ -28,7 +28,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">New Blog</h4>
+                <h4 class="modal-title">写一个博客</h4>
             </div>
             <div class="modal-body">
                 <div class="modal-body">
@@ -100,8 +100,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <input form="newBlog" type="submit" class="btn btn-primary" value="Save">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <input form="newBlog" type="submit" class="btn btn-primary" value="发布">
                 </div>
             </div>
         </div>
@@ -116,7 +116,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
                     &times;
                 </button>
-                <h4 class="modal-title">New Comment</h4>
+                <h4 class="modal-title">发表评论</h4>
             </div>
             <div class="modal-body">
                 <form id="newComment" action="${pageContext.request.contextPath}/CommentController"
@@ -132,8 +132,8 @@
                           style="min-height:50px;"></textarea><br>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <input form="newComment" type="submit" class="btn btn-primary" value="Save">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <input form="newComment" type="submit" class="btn btn-primary" value="发表">
             </div>
         </div>
     </div>

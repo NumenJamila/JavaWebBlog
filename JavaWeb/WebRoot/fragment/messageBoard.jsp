@@ -1,15 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <div class="panel panel-default">
     <div class="panel-heading panel-heading-style">
-        <h3 class="panel-title">Message Board</h3>
+        <h3 class="panel-title">留言板</h3>
     </div>
-    <%--<ul class="list-group">--%>
-        <%--<button id="newMessage" type="button" class="btn btn-default btn-block no-radius"--%>
-                <%--data-toggle="modal" data-target="#messageModal">--%>
-            <%--<span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;Leave Message--%>
-        <%--</button>--%>
-        <%--<li class="list-group-item">熟鱼</li>--%>
-    <%--</ul>--%>
 </div>
 <%-- 留言模态框（Modal）--%>
 <div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
@@ -29,7 +22,7 @@
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
                     <input form="doMessage" type="submit" class="btn btn-primary" value="Save">
                 </div>
             </form>

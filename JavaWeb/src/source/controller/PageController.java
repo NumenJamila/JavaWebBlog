@@ -1,6 +1,7 @@
 package source.controller;
 
 import source.entities.User;
+import source.entities.Article;
 import source.service.MysqlLink;
 import source.service.UserService;
 
@@ -19,13 +20,15 @@ import java.io.IOException;
 public class PageController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
+        response.setCharacterEncoding("utf-8");
         response.setContentType("text/html;charset=UTF-8");
         String currentDate = MysqlLink.addQuotes(new java.sql.Date(System.currentTimeMillis()));
         HttpSession session = request.getSession();
         String handle = request.getParameter("handle");
         String id = request.getParameter("id");
         User user;
-        switch (handle) {
+        String keyword=request.getParameter("keyword");
+		switch (handle) {
             case "jumpMyBlog":
             user = UserService.getInfo(id);
             request.setAttribute("id", id);
@@ -39,6 +42,12 @@ public class PageController extends HttpServlet {
                 user = UserService.getInfo(id);
                 request.setAttribute("id", id);
                 request.getRequestDispatcher("homePage.jsp").forward(request, response);
+                break;
+            case "search":
+                user = UserService.getInfo(id);
+                request.setAttribute("id", id);
+                request.setAttribute("keyword", keyword);
+                request.getRequestDispatcher("searchlist.jsp").forward(request, response);
                 break;
             default:break;
         }

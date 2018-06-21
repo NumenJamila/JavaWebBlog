@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <div class="panel panel-default">
     <div class="panel-heading panel-heading-style">
-        <h3 class="panel-title">Pre Info</h3>
+        <h3 class="panel-title">个人信息区</h3>
     </div>
 </div>
 <div class="panel-body">

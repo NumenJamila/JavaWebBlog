@@ -33,14 +33,14 @@ public class VisitController extends HttpServlet {
                 request.setAttribute("age", user.getAge());
                 request.setAttribute("sex", user.getSex());
                 request.setAttribute("tag","visitor");
-
+                //根据文章ID号查找完整的内容
                 Article current_article = ArticleService.getArticle(article_id);
                 session.setAttribute("article_id", article_id);
                 request.setAttribute("title", current_article.getTitle());
                 request.setAttribute("article_content", current_article.getArticle_content());
                 request.setAttribute("first_date", current_article.getFirst_date());
                 request.setAttribute("last_date", current_article.getLast_date());
-                request.getRequestDispatcher("prePageArticle.jsp").forward(request, response);//进入主页面
+                request.getRequestDispatcher("prePageArticle.jsp").forward(request, response);//进入文章详情页面
                 break;
             default:break;
         }

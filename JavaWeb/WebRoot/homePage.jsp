@@ -3,12 +3,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>BLOG</title>
+    <title>JavaWeb博客</title>
     <link rel="stylesheet" href="resources/css/reset.css" type="text/css">
     <link rel="stylesheet" href="resources/css/bootstrap-3.3.7-dist/css/bootstrap.css" type="text/css">
     <link rel="stylesheet" href="resources/css/css.css" type="text/css">
 </head>
-<body>
+<body> 
 <header>
     <%@include file="fragment/navBar.jsp"%>
 </header>

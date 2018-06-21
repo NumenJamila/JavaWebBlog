@@ -68,14 +68,15 @@ public class UserController extends HttpServlet {
                     }
                     break;
                 case "logout":
-                    if (session.getAttribute("id") != null) {
-                          session.invalidate();
-//                        session.removeAttribute("id");
-//                        session.removeAttribute("password");
-//                        session.removeAttribute("email");
-//                        session.removeAttribute("nickname");
-//                        session.removeAttribute("age");
-//                        session.removeAttribute("sex");
+                    if (session.getAttribute("owner") != null) {
+                      //session.invalidate();
+                        session.removeAttribute("owner");
+                        session.removeAttribute("id");
+                        session.removeAttribute("password");
+                        session.removeAttribute("email");
+                        session.removeAttribute("nickname");
+                        session.removeAttribute("age");
+                        session.removeAttribute("sex");
                     }
                     response.sendRedirect("login.jsp?opt=logout");//返回注册页面
                     //request.getRequestDispatcher("login.jsp?opt=logout").forward(request,response);

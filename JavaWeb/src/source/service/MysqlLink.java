@@ -149,6 +149,27 @@ public class MysqlLink {
     }
 
     /**
+     * 搜索查询（多个字段）
+     *
+     * @param table     数据表
+     * @param keys      多个字段名
+     * @param condition 查询条件
+     * @return 结果集
+     */
+    protected static ResultSet searchselect(String table, String[] keys, String condition) {
+        Statement link = MysqlLink.getLink();
+        if (null != link) {
+            try {
+                String sql = "SELECT " + arrayToString(keys) + " FROM " + table + " WHERE title LIKE '%" + condition + "%'";
+                return link.executeQuery(sql);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return null;
+    }
+    
+    /**
      * 查询（单个字段）
      *
      * @param table     数据表

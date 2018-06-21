@@ -14,13 +14,9 @@ public class ArticleService extends MysqlLink {
 
     public static boolean insertArticle(String id, String title, String article_content, String first_date, String last_date) {
         ResultSet resultSet = select(TABLE, ALL, equalsAnd(toArray("id"), toArray(id)));
+        System.out.println(resultSet);
         if (resultSet != null) {
-            try {
-                if (resultSet.next())
-                    return insert(TABLE, toArray("id", "title", "article_content", "first_date", "last_date"), toArray(id, title, article_content, first_date, last_date));
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            return insert(TABLE, toArray("id", "title", "article_content", "first_date", "last_date"), toArray(id, title, article_content, first_date, last_date));
         }
         return false;
     }
@@ -64,6 +60,33 @@ public class ArticleService extends MysqlLink {
         return articleList;
     }
 
+    public static ArrayList<Article> getSearchArticleList(String keyword) {
+        ArrayList<Article> articleList = new ArrayList<>();
+        ResultSet resultSet;
+        if (keyword==null) {
+            resultSet = sortArticle();
+        } else {
+            resultSet = searchselect(TABLE, ALL, keyword);
+        }
+        if (resultSet != null) {
+            try {
+                while (resultSet.next()) {
+                    articleList.add(new Article(
+                            resultSet.getInt("article_id"),
+                            resultSet.getString("title"),
+                            resultSet.getString("article_content"),
+                            resultSet.getDate("first_date"),
+                            resultSet.getDate("last_date"),
+                            resultSet.getString("id")
+                    ));
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return articleList;
+    }
+    
     public static Article getArticle(int article_id) {
         Article article = new Article();
         ResultSet resultSet = select(TABLE, ALL, equalsAnd(toArray("article_id"), toArray(article_id)));

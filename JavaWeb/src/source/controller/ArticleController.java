@@ -15,7 +15,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 /**
- * Created by sophia on 04/08/2017.
+ * 主页面将要显示的内容
  */
 //@WebServlet(name = "/ContentController")
 public class ArticleController extends HttpServlet {

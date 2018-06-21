@@ -3,22 +3,22 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <form id="blogShow" action="${pageContext.request.contextPath}/ArticleController?id=<%=request.getAttribute("id")%>"
       method="post"></form>
-<!--博文展示模块-->
+<!--博文详情展示模块-->
 <div id="blogShowContent" class="tab-content">
     <div role="article" class="panel panel-default">
         <div class="panel-heading">
             <h3 class="panel-title">
-                <button id="returnList" type="submit" class="clearButton"
-                        form="blogShow" name="handle" value="returnBlogList" style="float: left;background-color: #F5F5F5">
-                    <span class="glyphicon glyphicon-backward"></span>&nbsp;&nbsp;Return
-                </button>
-                <%=request.getAttribute("title")%>
-                <%if ((session.getAttribute("owner")).equals(request.getAttribute("id"))) {%>
-                <button id="editBlog" type="button" class="clearButton"
+                <%=request.getAttribute("title")%>  
+                <%try {  
+            		if ((session.getAttribute("owner")).equals(request.getAttribute("id"))) {%>
+                		<button id="editBlog" type="button" class="clearButton"
                         style="float: right;background-color: #F5F5F5" data-toggle="modal" data-target="#editBlogModal">
-                    <span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;Edit
-                </button>
-                <%}%>
+                    	<span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;编辑
+                		</button>  
+                	 <%}%>
+        		<%} catch (Exception e) {  
+            			e.printStackTrace();}%>
+                
             </h3>
         </div>
         <div class="panel-body"><%=request.getAttribute("article_content")%>
@@ -26,12 +26,15 @@
         <div class="panel-footer">
             <span style="margin-right: 50px;">创建时间：<%=request.getAttribute("first_date")%></span>
             <span>修改时间：<%=request.getAttribute("last_date")%></span>
-            <%if ((session.getAttribute("owner")).equals(request.getAttribute("id"))) {%>
+            <%try {
+            if ((session.getAttribute("owner")).equals(request.getAttribute("id"))) {%>
             <button id="deleteBlog" type="submit" class="clearButton"
                     form="blogShow" name="handle" value="deleteBlog" style="float: right;background-color: #F5F5F5;line-height: 100%">
-                <span class="glyphicon glyphicon-remove"></span>&nbsp;&nbsp;Delete Blog
+                <span class="glyphicon glyphicon-remove"></span>&nbsp;&nbsp;删除博客
             </button>
             <%}%>
+            <%} catch (Exception e) {  
+            			e.printStackTrace();}%>
         </div>
     </div>
 </div>
@@ -45,7 +48,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id="myModalLabel">Online Editor</h4>
+                <h4 class="modal-title" id="myModalLabel">在线编辑</h4>
             </div>
             <div class="modal-body">
                 <div class="modal-body">
@@ -118,8 +121,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <input form="updateBlog" type="submit" class="btn btn-primary" value="Save">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <input form="updateBlog" type="submit" class="btn btn-primary" value="确定">
                 </div>
             </div>
         </div>

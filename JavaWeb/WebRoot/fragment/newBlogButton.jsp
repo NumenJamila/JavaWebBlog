@@ -1,4 +1,7 @@
-<%if (request.getAttribute("id").equals(session.getAttribute("owner"))) {%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%request.setCharacterEncoding("utf-8");
+  response.setContentType("text/html;charset=UTF-8");
+if (request.getAttribute("id").equals(session.getAttribute("owner"))) {%>
 <ul id="menu" class="mfb-component--br mfb-zoomin" data-mfb-toggle="hover">
     <li class="mfb-component__wrap">
         <a href="#" class="mfb-component__button--main">
@@ -15,17 +18,17 @@
     </li>
 </ul>
 <%}%>
-<!-- 新建博文模态框（Modal） -->
+<!-- -->
 <div class="modal fade" id="newBlogModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">New Blog</h4>
+                <h4 class="modal-title">写一个博客</h4>
             </div>
             <div class="modal-body">
                 <div class="modal-body">
-                    <!--文本编辑框-->
+                    <!-- -->
                     <div class="content">
                         <div class="container-fluid">
                             <div id='pad-wrapper'>
@@ -93,8 +96,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <input form="newBlog" type="submit" class="btn btn-primary" value="Save">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <input form="newBlog" type="submit" class="btn btn-primary" value="发布">
                 </div>
             </div>
         </div>

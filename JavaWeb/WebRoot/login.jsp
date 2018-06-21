@@ -3,7 +3,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Welcome</title>
+    <title>欢迎登录博客</title>
     <link href="resources/css/reset.css" rel="stylesheet" type="text/css">
     <link href="resources/css/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="resources/css/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -17,31 +17,28 @@
     </ul>
 </nav>
 <section id="home">
-    <h1>BLOG</h1>
+    <h1>博客</h1>
     <div class="container">
         <div class="form row">
             <form id="login_form" class="form-horizontal col-sm-offset-3 col-md-offset-3" method="post"
                   action="${pageContext.request.contextPath}/UserController">
-                <h3 class="form-title">Login to your account</h3>
+                <h3 class="form-title">登录你的账户</h3>
                 <input type="hidden" name="opt" value="login">
                 <div class="col-sm-9 col-md-9">
                     <div class="form-group">
                         <i class="fa fa-user"></i>
-                        <input class="form-control required" type="text" placeholder="Username" name="id" autofocus maxlength="20">
+                        <input class="form-control required" type="text" placeholder="用户名" name="id" autofocus maxlength="20">
                     </div>
                     <div class="form-group">
                         <i class="fa fa-lock"></i>
-                        <input class="form-control required" type="password" placeholder="Password" name="password" maxlength="8" autocomplete="off">
+                        <input class="form-control required" type="password" placeholder="密码" name="password" maxlength="8" autocomplete="off">
                     </div>
-                    <div class="form-group">
-                        <label class="checkbox">
-                            <input type="checkbox" name="remember" value="1">Remember me
-                        </label>
+                    <div class="form-group">                        
                         <hr/>
-                        <a href="javascript:" id="register_btn">Create an account</a>
+                        <a href="javascript:" id="register_btn">创建一个账户</a>
                     </div>
                     <div class="form-group">
-                        <input type="submit" class="btn btn-success pull-right"  value="Login">
+                        <input type="submit" class="btn btn-success pull-right"  value="登录">
                     </div>
                 </div>
             </form>
@@ -50,31 +47,31 @@
         <div class="form row">
             <form class="form-horizontal col-sm-offset-3 col-md-offset-3" id="register_form"
                   method="post" action="${pageContext.request.contextPath}/UserController">
-                <h3 class="form-title">Create an account</h3>
+                <h3 class="form-title">正在创建一个账户</h3>
                 <input type="hidden" name="opt" value="register">
                 <div class="col-sm-9 col-md-9">
                     <div class="form-group">
                         <i class="fa fa-user"></i>
-                        <input class="form-control required" type="text" placeholder="Username" name="id"
+                        <input class="form-control required" type="text" placeholder="用户名" name="id"
                                autofocus>
                     </div>
                     <div class="form-group">
                         <i class="fa fa-lock"></i>
-                        <input class="form-control required" type="password" placeholder="Password"
+                        <input class="form-control required" type="password" placeholder="密码"
                                id="register_password" name="password" autocomplete="off">
                     </div>
                     <div class="form-group">
                         <i class="fa fa-check"></i>
-                        <input class="form-control required" type="password" placeholder="Re-type Your Password"
+                        <input class="form-control required" type="password" placeholder="再次输入密码"
                                name="rpassword" autocomplete="off">
                     </div>
                     <div class="form-group">
                         <i class="fa fa-envelope"></i>
-                        <input class="form-control required" type="text" placeholder="Email" name="email">
+                        <input class="form-control required" type="text" placeholder="邮箱" name="email">
                     </div>
                     <div class="form-group">
-                        <input type="submit" class="btn btn-success pull-right" value="Sign Up">
-                        <input type="submit" class="btn btn-info pull-left" id="back_btn" value="Back">
+                        <input type="submit" class="btn btn-success pull-right" value="注册">
+                        <input type="submit" class="btn btn-info pull-left" id="back_btn" value="返回">
                     </div>
                 </div>
             </form>

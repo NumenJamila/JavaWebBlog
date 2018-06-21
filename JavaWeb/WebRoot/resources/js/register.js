@@ -1,7 +1,7 @@
 $().ready(function() {
     $("#login_form").validate({
         rules: {
-            username: "required",
+            username: "required.",
             password: {
                 required: true,
                 minlength: 5
@@ -11,13 +11,13 @@ $().ready(function() {
             username: "This field is required.",
             password: {
                 required: "This field is required.",
-                minlength: jQuery.format("Please enter at least {0} characters."),
+                minlength: jQuery.format("请输入至少 {0} 位密码."),
             }
         }
     });
     $("#register_form").validate({
         rules: {
-            username: "required",
+            username: "required.",
             password: {
                 required: true,
                 minlength: 5
@@ -34,14 +34,14 @@ $().ready(function() {
             username: "This field is required.",
             password: {
                 required: "This field is required.",
-                minlength: jQuery.format("Please enter at least {0} characters.")
+                minlength: jQuery.format("请输入至少 {0} 位密码.")
             },
             rpassword: {
-                equalTo: "Your new password and confirmed new password do not match."
+                equalTo: "两次密码不一致."
             },
             email: {
                 required: "This field is required.",
-                email: "Please enter a valid email address."
+                email: "请输入邮箱地址."
             }
         }
     });
